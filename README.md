@@ -12,7 +12,7 @@ This application enables users to add, update, and filter their tasks based on s
 - Task location with map integration
 
 ## Technologies Used
-- Flutter
+- Flutter version 3.24.4
 - GetX for state management
 - SQLite for database
 
