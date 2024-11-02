@@ -1,16 +1,31 @@
-# task_management_app
+# Task Management App
 
-A new Flutter project.
+A Flutter-based task management application that allows users to manage their tasks
 
-## Getting Started
+## Description
+This application enables users to add, update, and filter their tasks based on status.
 
-This project is a starting point for a Flutter application.
+## Features
+- Add and update task
+- Search and filter tasks
+- Task statuses: Pending, On Progress, Completed
+- Task location with map integration
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used
+- Flutter version 3.24.4
+- GetX for state management
+- SQLite for database
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Requirements
+- Flutter SDK
+- Android/iOS Emulator or physical device
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+```bash
+git clone https://github.com/elandramaulana/Task-Management-App.git
+cd task_management_app
+flutter pub get
+flutter run
+
+NOTE : This app need permission to access your device location
+
