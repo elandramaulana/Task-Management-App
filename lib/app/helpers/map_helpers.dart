@@ -8,15 +8,21 @@ const String tileLayerUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 
 // request permission to get current device location
 Future<LatLng?> getCurrentLocation() async {
-  LocationPermission permission = await Geolocator.checkPermission();
-  if (permission == LocationPermission.denied) {
-    permission = await Geolocator.requestPermission();
-    if (permission == LocationPermission.deniedForever || permission == LocationPermission.denied) {
-      return null;
+  try {
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.deniedForever || permission == LocationPermission.denied) {
+        return null; // Permission denied
+      }
     }
+    
+    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    return LatLng(position.latitude, position.longitude);
+  } catch (e) {
+    print('Error getting location: $e');
+    return null; 
   }
-  Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-  return LatLng(position.latitude, position.longitude);
 }
 
 // create marker
