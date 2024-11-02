@@ -22,8 +22,8 @@ This application enables users to add, update, and filter their tasks based on s
 
 ## Installation
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/elandramaulana/Task-Management-App.git
+cd task_management_app
 flutter pub get
 flutter run
 
